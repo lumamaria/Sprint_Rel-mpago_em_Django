@@ -15,7 +15,11 @@
             <li>
                 <strong>{{ projeto.nome }}</strong><br>
                 {{ projeto.descricao }}<br>
-                {{ projeto.data_inicio }}
+                {{ projeto.data_inicio }}<br>
+
+                <a href="{% url 'editar_projeto' projeto.id %}">Editar</a>
+
+                <a href="{% url 'excluir_projeto' projeto.id %}">Excluir</a>
             </li>
         {% empty %}
             <li>Nenhum projeto cadastrado.</li>
