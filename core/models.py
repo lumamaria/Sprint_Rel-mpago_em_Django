@@ -8,3 +8,15 @@ class Projeto(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Tarefa(models.Model):
+    titulo = models.CharField(max_length=200)
+    prioridade = models.CharField(max_length=20)
+    concluido = models.BooleanField(default=False)
+    projeto = models.ForeignKey(
+        Projeto,
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return self.titulo
