@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastrar Tarefa</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <h1>Cadastrar Tarefa</h1>
+{% block title %}Cadastrar Tarefa{% endblock %}
 
-    <form method="post">
-        {% csrf_token %}
+{% block content %}
 
-        {{ form.as_p }}
+<h1>Cadastrar Tarefa</h1>
 
-        <button type="submit">Cadastrar</button>
-    </form>
+<form method="post">
+    {% csrf_token %}
 
-    <a href="{% url 'listar_tarefas' %}">Voltar para tarefas</a>
+    {{ form.as_p }}
 
-</body>
-</html>
+    <button type="submit">Cadastrar</button>
+</form>
 
+<a href="{% url 'listar_tarefas' %}">Voltar para tarefas</a>
+
+{% endblock %}
