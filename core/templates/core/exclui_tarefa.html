@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Excluir Tarefa{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/exclusao.css' %}">
+{% endblock %}
 
 {% block content %}
 

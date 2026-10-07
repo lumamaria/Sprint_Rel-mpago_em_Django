@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Cadastrar Tarefa{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/cadas_edita.css' %}">
+{% endblock %}
 
 {% block content %}
 

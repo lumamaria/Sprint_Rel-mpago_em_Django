@@ -1,19 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Cadastrar Projeto{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/cadas_edita.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<h1>Cadastrar Projeto</h1>
+<div class="formulario-container">
 
-<form method="post">
-    {% csrf_token %}
+    <h1>Cadastrar Projeto</h1>
 
-    {{ form.as_p }}
+    <form method="post">
+        {% csrf_token %}
 
-    <button type="submit">Cadastrar</button>
-</form>
+        {{ form.as_p }}
 
-<a href="{% url 'listar_projetos' %}">Voltar para projetos</a>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <a class="voltar" href="{% url 'listar_projetos' %}">
+        Voltar para projetos
+    </a>
+
+</div>
 
 {% endblock %}

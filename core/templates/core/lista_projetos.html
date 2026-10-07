@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Projetos{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/projetos.css' %}">
+{% endblock %}
 
 {% block content %}
 
