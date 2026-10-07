@@ -1,0 +1,174 @@
+/* =========================================================
+   CADASTRO E EDIÇÃO
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   CADASTRO E EDIÇÃO
+   --------------------------------------------------------- */
+
+main form {
+    width: min(100%, 760px);
+
+    margin: 0 auto 22px;
+
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* ---------------------------------------------------------
+   CAMPOS
+   --------------------------------------------------------- */
+
+main form p {
+    margin: 0 0 22px;
+}
+
+main form label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+main form input[type="text"],
+main form input[type="date"],
+main form input[type="number"],
+main form input[type="email"],
+main form input[type="password"],
+main form textarea,
+main form select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+
+    background-color: #f8fafc;
+    color: #1e293b;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+main form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+main form input[type="text"]:focus,
+main form input[type="date"]:focus,
+main form input[type="number"]:focus,
+main form input[type="email"]:focus,
+main form input[type="password"]:focus,
+main form textarea:focus,
+main form select:focus {
+    background-color: white;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ---------------------------------------------------------
+   CHECKBOX
+   --------------------------------------------------------- */
+
+main form input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+
+    margin-right: 8px;
+
+    vertical-align: middle;
+
+    accent-color: #2563eb;
+}
+
+/* ---------------------------------------------------------
+   BOTÃO PRINCIPAL
+   --------------------------------------------------------- */
+
+main form button {
+    width: 100%;
+
+    margin-top: 5px;
+
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
+    color: white;
+
+    box-shadow:
+        0 5px 14px rgba(37, 99, 235, 0.25);
+}
+
+main form button:hover {
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.32);
+}
+
+/* ---------------------------------------------------------
+   LINK VOLTAR
+   --------------------------------------------------------- */
+
+main form + a {
+    display: block;
+
+    width: min(100%, 760px);
+
+    margin: 0 auto;
+
+    padding: 12px 18px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+
+    color: #475569;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: all 0.2s ease;
+}
+
+main form + a:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #1e293b;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVIDADE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    main form {
+        padding: 24px 20px;
+    }
+}

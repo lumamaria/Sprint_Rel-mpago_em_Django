@@ -1,0 +1,234 @@
+/* =========================================================
+   TAREFAS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   BOTÃO "CADASTRAR NOVA TAREFA"
+   --------------------------------------------------------- */
+
+main > a[href*="cadastrar_tarefa"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 28px;
+    padding: 12px 20px;
+
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+
+    border-radius: 9px;
+    border: none;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+main > a[href*="cadastrar_tarefa"]:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.32);
+}
+
+
+/* ---------------------------------------------------------
+   LISTA DE TAREFAS
+   --------------------------------------------------------- */
+
+main > ul {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 22px;
+}
+
+
+/* ---------------------------------------------------------
+   CARD DE CADA TAREFA
+   --------------------------------------------------------- */
+
+main > ul > li {
+    position: relative;
+
+    padding: 28px 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe6ef;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 15px rgba(15, 23, 42, 0.06);
+
+    color: #475569;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* efeito ao passar o mouse */
+
+main > ul > li:hover {
+    transform: translateY(-5px);
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 12px 28px rgba(15, 23, 42, 0.11);
+}
+
+
+/* ---------------------------------------------------------
+   NOME DA TAREFA
+   --------------------------------------------------------- */
+
+main > ul > li strong {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #172554;
+
+    font-size: 21px;
+
+    font-weight: 750;
+
+    line-height: 1.3;
+}
+
+
+/* ---------------------------------------------------------
+   INFORMAÇÕES DA TAREFA
+   --------------------------------------------------------- */
+
+main > ul > li br {
+    line-height: 1.8;
+}
+
+
+/* ---------------------------------------------------------
+   LINKS "EDITAR" E "EXCLUIR"
+   --------------------------------------------------------- */
+
+main > ul > li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 17px;
+    margin-right: 8px;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* EDITAR */
+
+main > ul > li a[href*="/editar/"] {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+main > ul > li a[href*="/editar/"]:hover {
+    background: #bfdbfe;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.12);
+}
+
+
+/* EXCLUIR */
+
+main > ul > li a[href*="/excluir/"] {
+    background: #fee2e2;
+
+    color: #b91c1c;
+}
+
+main > ul > li a[href*="/excluir/"]:hover {
+    background: #fecaca;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 10px rgba(220, 38, 38, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   LISTA VAZIA
+   --------------------------------------------------------- */
+
+main > ul > li:only-child {
+    grid-column: 1 / -1;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 2px dashed #cbd5e1;
+
+    box-shadow: none;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVIDADE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    main > ul {
+        grid-template-columns: 1fr;
+    }
+
+    main > ul > li {
+        padding: 23px;
+    }
+}

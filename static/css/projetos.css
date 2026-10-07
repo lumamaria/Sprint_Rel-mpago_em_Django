@@ -1,0 +1,189 @@
+/* =========================================================
+   PROJETOS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   LINK "CADASTRAR NOVO PROJETO"
+   --------------------------------------------------------- */
+
+main > a[href*="cadastrar_projeto"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 28px;
+    padding: 12px 20px;
+
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+
+    border-radius: 9px;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.25);
+}
+
+main > a[href*="cadastrar_projeto"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.32);
+}
+
+/* ---------------------------------------------------------
+   LISTA
+   --------------------------------------------------------- */
+
+main > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+}
+
+/* ---------------------------------------------------------
+   CARDS DOS PROJETOS
+   --------------------------------------------------------- */
+
+main > ul > li {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 5px 15px rgba(15, 23, 42, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+main > ul > li:hover {
+    transform: translateY(-5px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 12px 28px rgba(15, 23, 42, 0.11);
+}
+
+/* ---------------------------------------------------------
+   NOME DO PROJETO
+   --------------------------------------------------------- */
+
+main > ul > li strong {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #172554;
+
+    font-size: 21px;
+    font-weight: 750;
+}
+
+/* ---------------------------------------------------------
+   DESCRIÇÃO E DATA
+   --------------------------------------------------------- */
+
+main > ul > li {
+    line-height: 1.65;
+    color: #475569;
+}
+
+/*
+   Os <br> existentes são mantidos.
+   O texto continua funcionando sem alteração no HTML.
+*/
+
+main > ul > li br {
+    line-height: 1.8;
+}
+
+/* ---------------------------------------------------------
+   LINKS EDITAR / EXCLUIR
+   --------------------------------------------------------- */
+
+main > ul > li a {
+    display: inline-flex;
+
+    margin-top: 20px;
+    margin-right: 8px;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+main > ul > li a[href*="/editar/"] {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+main > ul > li a[href*="/editar/"]:hover {
+    background: #bfdbfe;
+    transform: translateY(-2px);
+}
+
+main > ul > li a[href*="/excluir/"] {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+main > ul > li a[href*="/excluir/"]:hover {
+    background: #fecaca;
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   LISTA VAZIA
+   --------------------------------------------------------- */
+
+main > ul > li:only-child {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 50px 25px;
+
+    color: #64748b;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 2px dashed #cbd5e1;
+
+    box-shadow: none;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVIDADE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    main > ul {
+        grid-template-columns: 1fr;
+    }
+
+    main > ul > li {
+        padding: 21px;
+    }
+
+    main > ul > li a {
+        margin-top: 15px;
+    }
+}
