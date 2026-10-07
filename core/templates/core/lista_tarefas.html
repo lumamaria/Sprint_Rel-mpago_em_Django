@@ -1,37 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Tarefas</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <h1>Tarefas cadastradas</h1>
+{% block title %}Tarefas{% endblock %}
 
-    <a href="{% url 'cadastrar_tarefa' %}">Cadastrar nova tarefa</a>
+{% block content %}
 
-    <ul>
-        {% for tarefa in tarefas %}
-            <li>
-                <strong>{{ tarefa.titulo }}</strong><br>
-                Prioridade: {{ tarefa.prioridade }}<br>
-                Concluída:
-                {% if tarefa.concluido %}
-                    Sim
-                {% else %}
-                    Não
-                {% endif %}
-                <br>
-                Projeto: {{ tarefa.projeto.nome }}<br>
+<h1>Tarefas cadastradas</h1>
 
-                <a href="{% url 'editar_tarefa' tarefa.id %}">Editar</a>
+<a href="{% url 'cadastrar_tarefa' %}">Cadastrar nova tarefa</a>
 
-                <a href="{% url 'excluir_tarefa' tarefa.id %}">Excluir</a>
-            </li>
-        {% empty %}
-            <li>Nenhuma tarefa cadastrada.</li>
-        {% endfor %}
-    </ul>
 
-</body>
-</html>
+<ul>
+    {% for tarefa in tarefas %}
+        <li>
+            <strong>{{ tarefa.titulo }}</strong><br>
+            Prioridade: {{ tarefa.prioridade }}<br>
+            Concluída: {{ tarefa.concluido }}<br>
+            Projeto: {{ tarefa.projeto.nome }}<br>
+
+            <a href="{% url 'editar_tarefa' tarefa.id %}">Editar</a>
+
+            <a href="{% url 'excluir_tarefa' tarefa.id %}">Excluir</a>
+        </li>
+    {% empty %}
+        <li>Nenhuma tarefa cadastrada.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

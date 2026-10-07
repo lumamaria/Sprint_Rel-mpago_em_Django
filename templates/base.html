@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Sistema de Projetos e Tarefas{% endblock %}</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sistema de Projetos e Tarefas</h1>
+
+        <nav>
+            <a href="{% url 'listar_projetos' %}">Projetos</a>
+            |
+            <a href="{% url 'listar_tarefas' %}">Tarefas</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

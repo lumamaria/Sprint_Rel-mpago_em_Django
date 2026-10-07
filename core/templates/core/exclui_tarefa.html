@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Excluir Tarefa</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <h1>Excluir Tarefa</h1>
+{% block title %}Excluir Tarefa{% endblock %}
 
-    <p>Tem certeza que deseja excluir a tarefa "{{ tarefa.titulo }}"?</p>
+{% block content %}
 
-    <form method="post">
-        {% csrf_token %}
+<h1>Excluir Tarefa</h1>
 
-        <button type="submit">Sim, excluir</button>
-    </form>
+<p>Tem certeza que deseja excluir a tarefa "{{ tarefa.titulo }}"?</p>
 
-    <a href="{% url 'listar_tarefas' %}">Cancelar</a>
+<form method="post">
+    {% csrf_token %}
 
-</body>
-</html>
+    <button type="submit">Sim, excluir</button>
+</form>
+
+<a href="{% url 'listar_tarefas' %}">Cancelar</a>
+
+{% endblock %}
